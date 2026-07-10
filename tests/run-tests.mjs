@@ -12,11 +12,22 @@ const E = context.AdminEngine;
 const expectedFails = {
   invoice: ['INV-008', 'INV-009', 'INV-010'],
   sales: ['LEAD-008', 'LEAD-009', 'LEAD-010'],
-  client: ['ONB-008', 'ONB-009', 'ONB-010']
+  client: ['ONB-008', 'ONB-009', 'ONB-010'],
+  property: ['PROP-008', 'PROP-009', 'PROP-010'],
+  practice: ['PRAC-008', 'PRAC-009', 'PRAC-010'],
+  member: ['MEM-008', 'MEM-009', 'MEM-010']
 };
-const idKey = { invoice: 'record_id', sales: 'lead_id', client: 'client_id' };
 
-for (const system of ['invoice', 'sales', 'client']) {
+const idKey = {
+  invoice: 'record_id',
+  sales: 'lead_id',
+  client: 'client_id',
+  property: 'property_record_id',
+  practice: 'booking_id',
+  member: 'member_id'
+};
+
+for (const system of ['invoice', 'sales', 'client', 'property', 'practice', 'member']) {
   const records = E.sampleRecords(system);
   const validations = records.map((r) => E.validate(system, r, records));
   const failed = records.filter((_, i) => validations[i].status === 'Fail').map((r) => r[idKey[system]]);
@@ -33,4 +44,4 @@ for (const system of ['invoice', 'sales', 'client']) {
   assert.equal(roundTrip[0][idKey[system]], records[0][idKey[system]], `${system}: CSV round-trip should preserve first ID`);
 }
 
-console.log('All Admin HQ modular validation tests passed.');
+console.log('All six Admin HQ validation tests passed.');
