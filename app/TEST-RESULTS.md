@@ -19,7 +19,7 @@ The regression runner is committed, but this tool session could not execute it a
 Expected clean result after running the command from latest `main`:
 
 ```text
-All Admin HQ inventory and production-scale regression tests passed.
+All Admin HQ inventory, page-contract, scale, and production-scale regression tests passed.
 ```
 
 ## Repo test coverage
@@ -27,6 +27,16 @@ All Admin HQ inventory and production-scale regression tests passed.
 The committed modular test suite verifies:
 
 - required public/app route files exist.
+- public pages do not contain placeholder email.
+- public pages do not use old demo-first CTA wording.
+- homepage links to all six system sample routes.
+- Admin Systems page links to all six system sample routes.
+- Admin HQ launcher links to all six sample and empty system routes.
+- every app page has the correct `data-system` value.
+- every app page loads shared CSS, shared rules engine, and shared browser controller.
+- every app page contains the required UI IDs for controls, metrics, table, report, blocked queue, modal, and form.
+- every app page navigation links to all six systems.
+- CSS does not reintroduce known oversized values from the pre-DueToday-scale pass.
 - Invoice Admin sample set returns 7 Pass / 3 Fail.
 - Sales Admin sample set returns 7 Pass / 3 Fail.
 - Client Admin sample set returns 7 Pass / 3 Fail.
@@ -56,7 +66,7 @@ The app is now a modular static Admin HQ v1 for controlled private pilots:
 - `app/property-admin/index.html` runs Property Admin.
 - `app/practice-admin/index.html` runs Practice Admin.
 - `app/member-admin/index.html` runs Member Admin.
-- `tests/run-tests.mjs` validates all six systems from the shared engine.
+- `tests/run-tests.mjs` validates all six systems, page contracts, scale guardrails and production-scale fixtures.
 - `tests/fixtures/sanitized-production-scale-data.mjs` generates production-scale sanitized local data.
 
 ## Production note
