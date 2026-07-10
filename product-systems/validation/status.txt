@@ -1,0 +1,1 @@
+Current validation status: Invoice Admin is Gate 1 logic-testable. Sales Admin and Client Admin are Gate 0 prototypes. Next: live Invoice Admin Google Sheet test.
