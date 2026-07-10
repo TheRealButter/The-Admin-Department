@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Practice Admin — Admin HQ</title>
+  <link rel="stylesheet" href="../assets/app.css" />
+</head>
+<body class="practice" data-system="practice">
+  <main class="shell">
+    <nav class="topbar"><a class="back" href="../">← Admin HQ</a><div class="topbar-links"><a href="../invoice-admin/">Invoice</a><a href="../sales-admin/">Sales</a><a href="../client-admin/">Client</a><a href="../property-admin/">Property</a><a href="../practice-admin/">Practice</a><a href="../member-admin/">Member</a></div></nav>
+    <header class="app-head"><div><p class="eyebrow">Working system</p><h1 id="system-title">Practice Admin</h1><p id="system-subtitle" class="sub"></p><div class="actions"><button id="add-record" class="btn primary">Add record</button><button id="load-demo" class="btn">Load sample data</button><button id="export-csv" class="btn">Export CSV</button><label class="btn">Import CSV<input id="import-csv" type="file" accept=".csv,text/csv"></label><button id="empty-data" class="btn ghost">Clear</button></div></div><div class="orb"></div></header>
+    <section class="metrics"><div class="metric"><span>Total records</span><strong id="record-count">0</strong></div><div class="metric"><span>Passed</span><strong id="pass-count">0</strong></div><div class="metric"><span>Blocked</span><strong id="fail-count">0</strong></div></section>
+    <section class="layout"><article class="panel"><div class="panel-head"><div><p class="eyebrow">Tracker</p><h2>Records and validation</h2></div><p class="muted">Rules run live in the browser before this moves to a backend.</p></div><div class="tablewrap"><table id="records-table"></table></div></article><aside class="side"><article class="panel"><p class="eyebrow">Weekly report</p><h2>Calculated report</h2><div id="report-grid" class="report-grid"></div></article><article class="panel"><p class="eyebrow">Stop/go queue</p><h2>Blocked records</h2><ul id="blocked-list" class="blocked"></ul></article></aside></section>
+  </main>
+  <dialog id="record-modal"><form id="record-form"></form><div class="modal-actions"><button type="button" id="close-modal" class="btn">Cancel</button><button form="record-form" class="btn primary">Save record</button></div></dialog>
+  <script src="../assets/engine.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>
