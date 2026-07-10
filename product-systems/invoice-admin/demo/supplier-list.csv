@@ -1,0 +1,6 @@
+supplier_id,supplier_name,category,contact_person,email,phone,vat_number,payment_terms,usual_approval_owner,folder_link,notes
+SUP-001,ABC Supplies,Materials,Naledi Jacobs,accounts@abcsupplies.co.za,0110000000,4123456789,30 days,Owner,https://example.com/folders/abc-supplies,Approved supplier
+SUP-002,Quick Repairs,Repairs,Peter Smith,finance@quickrepairs.co.za,0120000000,,7 days,Operations Manager,https://example.com/folders/quick-repairs,VAT number missing
+SUP-003,City Stationery,Stationery,Ayesha Khan,sales@citystationery.co.za,0130000000,4987654321,Immediate,Admin,https://example.com/folders/city-stationery,Low-value supplier
+SUP-004,Metro Cleaning Supplies,Cleaning Supplies,Thabo Dlamini,billing@metrocleaning.co.za,0140000000,4234567890,14 days,Owner,https://example.com/folders/metro-cleaning,New supplier pending first approval
+SUP-005,BuildMart Hardware,Materials,Chris Botha,accounts@buildmart.co.za,0150000000,4567891234,30 days,Project Manager,https://example.com/folders/buildmart,Frequent supplier
