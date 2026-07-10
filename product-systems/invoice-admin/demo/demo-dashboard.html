@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invoice Admin Demo — The Admin Department</title>
+  <link rel="stylesheet" href="demo-dashboard.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <p class="eyebrow">The Admin Department</p>
+      <h1>Invoice Admin Demo</h1>
+      <p>Supplier invoices, receipts, proof of payments, approvals, and filing — organised into one clear workflow.</p>
+    </header>
+
+    <section class="metrics" aria-label="Demo metrics">
+      <article><span>Invoices received</span><strong>24</strong></article>
+      <article><span>Ready for review</span><strong>8</strong></article>
+      <article><span>Missing info</span><strong>5</strong></article>
+      <article><span>Possible duplicates</span><strong>2</strong></article>
+      <article><span>Filed this week</span><strong>14</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">Workflow</p>
+          <h2>Invoice tracker</h2>
+        </div>
+        <p class="note">Demo data for a client processing supplier documents manually.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Invoice</th>
+              <th>Supplier</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Owner</th>
+              <th>Next action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>INV-4521</td>
+              <td>ABC Supplies</td>
+              <td>R1,437.50</td>
+              <td><span class="pill ready">Ready for Review</span></td>
+              <td>Owner</td>
+              <td>Approve invoice</td>
+            </tr>
+            <tr>
+              <td>QR-998</td>
+              <td>Quick Repairs</td>
+              <td>R4,370.00</td>
+              <td><span class="pill warning">Missing Info</span></td>
+              <td>Admin</td>
+              <td>Request VAT number</td>
+            </tr>
+            <tr>
+              <td>MC-1044</td>
+              <td>Metro Cleaning Supplies</td>
+              <td>R8,760.00</td>
+              <td><span class="pill urgent">Waiting for Approval</span></td>
+              <td>Owner</td>
+              <td>Approve new supplier</td>
+            </tr>
+            <tr>
+              <td>BM-2201</td>
+              <td>BuildMart Hardware</td>
+              <td>R2,910.00</td>
+              <td><span class="pill duplicate">Possible Duplicate</span></td>
+              <td>Admin</td>
+              <td>Check previous invoice</td>
+            </tr>
+            <tr>
+              <td>RCPT-77</td>
+              <td>City Stationery</td>
+              <td>R356.50</td>
+              <td><span class="pill filed">Filed</span></td>
+              <td>Admin</td>
+              <td>No action</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <p class="eyebrow">Exception queue</p>
+        <h2>Needs attention</h2>
+        <ul class="list">
+          <li><strong>Quick Repairs</strong><span>VAT number missing before review.</span></li>
+          <li><strong>Metro Cleaning Supplies</strong><span>New supplier needs owner approval.</span></li>
+          <li><strong>BuildMart Hardware</strong><span>Possible duplicate invoice.</span></li>
+          <li><strong>ABC Supplies</strong><span>Due date within 48 hours.</span></li>
+        </ul>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">Weekly report</p>
+        <h2>Owner summary</h2>
+        <ul class="list">
+          <li><strong>24</strong><span>documents captured this week.</span></li>
+          <li><strong>14</strong><span>documents filed correctly.</span></li>
+          <li><strong>R32,480</strong><span>waiting for approval.</span></li>
+          <li><strong>5</strong><span>items need missing information.</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cta">
+      <p class="eyebrow">Demo close</p>
+      <h2>Start with one invoice workflow.</h2>
+      <p>We set up the tracker, folder structure, statuses, approval rules, templates, and weekly report. Once it works manually, we can add light automation behind the scenes.</p>
+    </section>
+  </main>
+</body>
+</html>
