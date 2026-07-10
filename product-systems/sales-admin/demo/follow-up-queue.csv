@@ -1,0 +1,6 @@
+follow_up_id,lead_id,contact_name,company_name,service_needed,quote_amount,status,follow_up_type,due_date,owner,message_needed,priority,notes
+FU-001,LEAD-004,Ayesha Khan,Khan Properties,Security camera installation,12500.00,Open,Quote follow-up,2026-07-10,Admin,Yes,High,High-value quote and competitor risk
+FU-002,LEAD-002,Lerato Naidoo,,Office cleaning quote,4500.00,Open,Quote follow-up,2026-07-12,Admin,Yes,Normal,Check if quote was reviewed
+FU-003,LEAD-005,Chris Botha,Botha Hardware,Monthly cleaning service,6800.00,Open,Missing details,2026-07-11,Admin,Yes,Normal,Waiting for site photos
+FU-004,LEAD-001,Thabo Mokoena,Mokoena Projects,Gate motor repair,,Open,First response,2026-07-10,Owner,Yes,High,Urgent lead needs call
+FU-005,LEAD-006,Naledi Jacobs,Jacobs Retail,Electrical compliance quote,,Closed,Cold lead,2026-07-09,Owner,No,Low,No response after 3 follow-ups
