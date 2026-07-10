@@ -1,0 +1,1 @@
+Next tool call should fetch_file, not create_file.
