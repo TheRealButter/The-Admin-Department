@@ -138,3 +138,39 @@ create table if not exists case_studies (
   permission_to_publish boolean default false,
   created_at timestamptz default now()
 );
+
+-- ---------------------------------------------------------------------------
+-- Row Level Security — REQUIRED before this schema touches a Supabase project.
+-- Supabase exposes every table in the public schema through PostgREST; without
+-- RLS, anyone holding the project's public anon key can read and write all
+-- client PII, pricing, and tickets. Enabling RLS with no policies denies all
+-- anon/authenticated access (deny-by-default); the service role bypasses RLS
+-- for internal tooling. Add explicit policies before granting any client app
+-- direct table access.
+alter table clients enable row level security;
+alter table contacts enable row level security;
+alter table departments enable row level security;
+alter table installations enable row level security;
+alter table audits enable row level security;
+alter table workflows enable row level security;
+alter table tasks enable row level security;
+alter table templates enable row level security;
+alter table support_tickets enable row level security;
+alter table reports enable row level security;
+alter table case_studies enable row level security;
+
+-- Covering indexes for foreign keys: without these, every cascade or join
+-- from clients/installations sequential-scans the child tables.
+create index if not exists contacts_client_idx on contacts(client_id);
+create index if not exists installations_client_idx on installations(client_id);
+create index if not exists installations_department_idx on installations(department_id);
+create index if not exists audits_client_idx on audits(client_id);
+create index if not exists workflows_installation_idx on workflows(installation_id);
+create index if not exists tasks_client_idx on tasks(client_id);
+create index if not exists tasks_installation_idx on tasks(installation_id);
+create index if not exists support_tickets_client_idx on support_tickets(client_id);
+create index if not exists reports_client_idx on reports(client_id);
+create index if not exists case_studies_client_idx on case_studies(client_id);
+create index if not exists templates_department_idx on templates(department_id);
+create index if not exists support_tickets_installation_idx on support_tickets(installation_id);
+create index if not exists reports_installation_idx on reports(installation_id);

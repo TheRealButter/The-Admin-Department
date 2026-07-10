@@ -94,3 +94,12 @@ create index if not exists sales_admin_leads_client_status_idx on sales_admin_le
 create index if not exists sales_admin_leads_followup_idx on sales_admin_leads(follow_up_due);
 create index if not exists client_admin_onboarding_client_status_idx on client_admin_onboarding(client_id, status);
 create index if not exists client_admin_onboarding_next_action_idx on client_admin_onboarding(next_action_due);
+
+-- ---------------------------------------------------------------------------
+-- Row Level Security — REQUIRED before this schema touches a Supabase project.
+-- Enabling RLS with no policies denies all anon/authenticated access
+-- (deny-by-default); the service role bypasses RLS for internal tooling.
+-- Add explicit policies before granting any client app direct table access.
+alter table invoice_admin_items enable row level security;
+alter table sales_admin_leads enable row level security;
+alter table client_admin_onboarding enable row level security;
