@@ -1,0 +1,22 @@
+system,test_id,scenario,input_example,expected_result,critical
+Invoice Admin,INV-T01,Complete invoice intake,Known supplier with invoice number amount VAT due date and document link,Status can move to Ready for Review with owner and next action,Yes
+Invoice Admin,INV-T02,Missing supplier VAT details,Invoice from supplier with VAT amount but no supplier VAT number,Status becomes Missing Info and next action requests VAT number,Yes
+Invoice Admin,INV-T03,Possible duplicate invoice,Invoice number or amount matches existing supplier record,Status becomes Possible Duplicate and approval is blocked until reviewed,Yes
+Invoice Admin,INV-T04,New supplier high-value invoice,Unknown/new supplier above approval threshold,Status becomes Waiting for Approval and owner must approve supplier before filing/payment readiness,Yes
+Invoice Admin,INV-T05,Due soon invoice,Invoice due within 48 hours,Item escalates with due-soon note and owner next action,No
+Invoice Admin,INV-T06,Filing readiness,Approved invoice with document link and folder link,Status can move to Filed with correct naming convention,Yes
+Invoice Admin,INV-T07,Report accuracy,Tracker has received approved missing duplicate filed records,Weekly report counts match tracker status counts,Yes
+Sales Admin,SAL-T01,New urgent lead intake,Urgent website or WhatsApp lead,Status becomes Needs Response with owner and same-day/urgent next action,Yes
+Sales Admin,SAL-T02,First response logged,Lead contacted and response time captured,Status moves from Needs Response to Contacted or Waiting for Client,Yes
+Sales Admin,SAL-T03,Quote sent follow-up,Quote sent with amount and sent date,Follow-up due date is set within 24 to 48 hours,Yes
+Sales Admin,SAL-T04,Overdue follow-up,Quote follow-up due date passes without action,Status becomes Follow-up Due or overdue appears in report,Yes
+Sales Admin,SAL-T05,Lost/cold reason,Lead becomes Lost or Cold,Reason is captured before weekly report,No
+Sales Admin,SAL-T06,Report accuracy,Tracker has new contacted quoted won lost overdue records,Weekly report counts match tracker status counts and open quote value,Yes
+Client Admin,CLI-T01,New client intake,Accepted client or package is added,Status becomes New Client with owner and welcome next action,Yes
+Client Admin,CLI-T02,Welcome and document request,Welcome sent and documents requested,Status becomes Documents Requested with checklist items,Yes
+Client Admin,CLI-T03,Missing document follow-up,Required document missing after request,Status remains Waiting for Client or Documents Requested with owner and follow-up date,Yes
+Client Admin,CLI-T04,Ready to start gate,Documents received agreement signed payment verified folder created handover complete,Status can move to Ready to Start,Yes
+Client Admin,CLI-T05,Block premature active status,Agreement/payment/folder/handover incomplete,Status cannot move to Active,Yes
+Client Admin,CLI-T06,Report accuracy,Tracker has active stuck waiting payment pending clients,Weekly report counts match tracker status counts and missing-document checklist,Yes
+All,ALL-T01,Handover usability,Admin person receives tracker SOP report template and checklist,Admin person can explain daily routine and statuses without founder help,Yes
+All,ALL-T02,Automation restraint,Workflow has not passed manual tests yet,No automation is added that bypasses human approval,Yes
